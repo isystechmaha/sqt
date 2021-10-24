@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: (
           sequelize.Sequelize.literal(
             `
-              'P' || nextval('"PostsIdSeq"')
+              'P' || lpad(nextval('"PostsIdSeq"')::text, 10, '0')
             `
           )
         )
@@ -40,6 +40,8 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'Post',
     }
   );
+
+  sequelize.sync();
 
   return Post;
 };
