@@ -93,12 +93,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 8 - ((7 * winheight(0) + 20) / 41)
+let s:l = 1 - ((0 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
-normal! 016|
+1
+normal! 0
 tabedit config/config.json
 set splitbelow splitright
 set nosplitbelow
@@ -168,11 +168,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 20) / 41)
+let s:l = 45 - ((40 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+45
 normal! 0
 tabedit source/server/index.js
 set splitbelow splitright
@@ -224,7 +224,7 @@ exe s:l
 normal! zt
 22
 normal! 017|
-tabnext 6
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
