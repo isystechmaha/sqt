@@ -2,7 +2,8 @@
 
 import express from 'express';
 
-import dbGet from './fn/dbGet';
+import db from '~/models';
+import postRouterGet from './router/post';
 
 (
   async () => {
@@ -12,12 +13,16 @@ import dbGet from './fn/dbGet';
       process.env.npm_package_config_PORT
     );
 
-    const db = await dbGet();
-
-    db.models.Post
-      .create({text: 'maha'});
-
     return express()
+      .use(
+        express.json()
+      )
+      .use(
+        '/post',
+        postRouterGet(
+          db
+        )
+      )
       .get(
         '*',
         (
