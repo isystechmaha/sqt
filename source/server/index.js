@@ -13,6 +13,8 @@ import postRouterGet from './router/post';
       process.env.npm_package_config_PORT
     );
 
+    db.sequelize.sync();
+
     return express()
       .use(
         express.json()

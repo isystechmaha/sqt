@@ -16,13 +16,13 @@ badd +1 source/server/views/index.ejs
 badd +12 source/server/fn/dbGet.js
 badd +7 model/post.js
 badd +1 source/server/model/post.js
-badd +0 source/server/router/post/index.js
+badd +1 source/server/router/post/index.js
 badd +1 migrations/20211024105246-sqt.js
 badd +8 models/index.js
 badd +8 config/config.json
 badd +45 models/post.js
-badd +0 migrations/20211024113548-create-post.js
-badd +0 migrations/20211024133240-sqt.js
+badd +1 migrations/20211024113548-create-post.js
+badd +1 migrations/20211024133240-sqt.js
 argglobal
 %argdel
 set stal=2
@@ -151,31 +151,6 @@ exe s:l
 normal! zt
 18
 normal! 0
-tabedit migrations/20211024113548-create-post.js
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 20) / 41)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-6
-normal! 0
 tabedit models/index.js
 set splitbelow splitright
 set nosplitbelow
@@ -195,11 +170,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 8 - ((7 * winheight(0) + 20) / 41)
+let s:l = 32 - ((31 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
+32
 normal! 03|
 tabedit models/post.js
 set splitbelow splitright
@@ -220,12 +195,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 41 - ((36 * winheight(0) + 20) / 41)
+let s:l = 44 - ((37 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-41
-normal! 0
+44
+normal! 03|
 tabedit source/server/index.js
 set splitbelow splitright
 set nosplitbelow
